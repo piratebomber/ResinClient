@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Resin — Web Minecraft Client (Prototype)</title>
+    <meta name="description" content="Resin: a modular, static, browser-based voxel sandbox prototype with a Java-to-JS call shim." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/resin.css" />
+  </head>
+  <body>
+    <noscript>
+      <div class="fatal">Resin requires JavaScript to run.</div>
+    </noscript>
+
+    <!-- App root -->
+    <div id="app">
+      <!-- Main game canvas (2D prototype surface) -->
+      <canvas id="resin-canvas" tabindex="0" aria-label="Resin game surface"></canvas>
+
+      <!-- Menu overlay (visible on load) -->
+      <div id="menu-overlay" class="overlay visible" role="dialog" aria-modal="true">
+        <div class="panel">
+          <h1>Resin</h1>
+          <p class="subtitle">Web Minecraft Client (prototype)</p>
+          <div class="controls">
+            <button id="btn-play" class="primary">Play 2D</button>
+            <button id="btn-play-3d" class="primary">Play 3D</button>
+            <button id="btn-options">Options</button>
+          </div>
+          <p class="hint">2D: WASD pan, 1-3 select, Click place, Shift+Click remove, Q/E zoom
+            • 3D: Click canvas to lock mouse; move with WASD, Space jump</p>
+        </div>
+      </div>
+
+      <!-- HUD overlay (shown in-game) -->
+      <div id="hud-overlay" class="overlay"></div>
+    </div>
+
+    <!-- Entry point -->
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>
